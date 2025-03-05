@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayTube</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="pictures/logo.svg" type="pictures">
+  </head>
+  <body class="body-class">
+    <header>
+      <div class="left-header">
+        <button id="menu-toggle">☰</button>
+        <img src="pictures/youtube-logo.svg" id="logo-el" />
+      </div>
+
+      <div class="middle-header">
+        <input type="text" id="input-el" placeholder="Search here"/>
+        <div id="voice-btn">
+          <img src="pictures/voice-search-icon.svg" alt="search-voice" />
+        </div>
+      </div>
+
+      <div class="right-header">
+        <img src="pictures/upload.svg" class="toggle-img" />
+        <img src="pictures/explore.svg" class="toggle-img" />
+        <img src="pictures/notifications.svg" class="toggle-img" />
+        <img src="pictures/my-channel1.jpg" class="channel-img" />
+      </div>
+    </header>
+
+    <div class="sidebar">
+      <div class="sidebar-div">
+        <img src="pictures/home.svg" class="sidebar-img"/>
+        <p class="nav-name">Home</p>
+      </div>
+      <div class="sidebar-div">
+        <img src="pictures/explore.svg" class="sidebar-img"/>
+        <p class="nav-name">Explore</p>
+      </div>
+      <div class="sidebar-div">
+        <img src="pictures/originals.svg" class="sidebar-img"/>
+        <p class="nav-name">Originals</p>
+      </div>
+      <div class="sidebar-div">
+        <img src="pictures/upload.svg" class="sidebar-img"/>
+        <p class="nav-name">Upload</p>
+      </div>
+      <div class="sidebar-div">
+        <img src="pictures/library.svg" class="sidebar-img"/>
+        <p class="nav-name">Library</p>
+      </div>
+    </div>
+
+
+    <main>
+      <section class="video-grid js-videos-grid"></section>
+    </main>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

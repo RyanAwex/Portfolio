@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Josefin Sans', 'Arial', 'sans-serif';
+}
+
+
+:root {
+  --text-color : black;
+  --bg-color: #F7F7F7;
+  --accent-color: rgb(74, 99, 140);
+  --accent-low-color: rgba(74, 102, 140, 0.4);
+  --img-shadow: rgba(0, 0, 0, 1);
+  --shadow-hight-color: rgba(0, 0, 0, 0.7);
+  --shadow-medium-color: rgba(0, 0, 0, 0.5);
+  --shadow-low-color: rgba(0, 0, 0, 0.2);
+}
+
+/* rgb(96, 126, 175) */
+.dark-mode {
+  --text-color: white;
+  --bg-color: #202020;
+  --accent-color: rgb(255, 185, 64);
+  --accent-low-color: rgba(255, 185, 64, 0.4);
+
+  --img-shadow: rgba(255, 255, 255, 0.5);
+  --shadow-hight-color: rgba(255, 255, 255, 0.7);
+  --shadow-medium-color: rgba(255, 255, 255, 0.5);
+  --shadow-low-color: rgba(255, 255, 255, 0.2);
+}
+
