@@ -89,16 +89,18 @@ main {
 .picture-container {
   margin-bottom: 60px;
   height: auto;
-  height: 300px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .picture-container img {
   height: auto;
-  width: 250px;
+  width: 280px;
   border-radius: 20px;
   box-shadow: 0px 0px 25px var(--img-shadow);
   transition: 0.2s;
-  filter: invert(0.5); /*The filter*/
 }
 
 .picture-container img:hover {
