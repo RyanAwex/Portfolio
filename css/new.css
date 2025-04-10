@@ -144,7 +144,7 @@ main {
 
 .about-middle p {
   direction: ltr;
-  text-align: justify;
+  text-align: start;
   line-height: 1.8;
 }
 
