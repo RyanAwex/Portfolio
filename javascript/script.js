@@ -9,6 +9,8 @@ const darkModeMain = document.getElementById("dark-mode-main");
 const lightMode = document.getElementById("light-mode");
 const darkMode = document.getElementById("dark-mode");
 
+document.addEventListener("contextmenu", (e) => e.preventDefault());
+
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
   localStorage.setItem(
