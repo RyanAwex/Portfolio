@@ -2,10 +2,10 @@ export const projects = [
   {
     image: `images/youtube.png`,
     descriptionEn: `
-      This is a simple Youtube project. Where I made some modifications on the layout, I used JavaScript to show the content Data for better performance instead of normal HTML code. This project developed using HTML, CSS, and JavaScript.
+      This is a simple YouTube project where I applied several layout improvements and made design changes to make it more visually appealing. Instead of writing all the content in static HTML, I used JavaScript to dynamically generate the data and display the content on the page. This method helps improve performance and makes the project easier to update in the future. The project was created using HTML, CSS, and JavaScript..
     `,
     descriptionDE: `
-      Das ist ein einfaches YouTube-Projekt. Ich habe einige Änderungen am Layout vorgenommen und JavaScript verwendet, um die Inhaltsdaten anzuzeigen, um die Leistung zu verbessern, anstatt normalen HTML-Code zu nutzen. Dieses Projekt wurde mit HTML, CSS und JavaScript entwickelt.
+      Das ist ein einfaches YouTube-Projekt, bei dem ich einige Verbesserungen am Layout gemacht und das Design angepasst habe, damit es besser aussieht. Anstatt den gesamten Inhalt in statischem HTML zu schreiben, habe ich JavaScript verwendet, um die Daten dynamisch zu laden und auf der Seite anzuzeigen. Diese Methode verbessert die Leistung und macht das Projekt leichter aktualisierbar. Das Projekt wurde mit HTML, CSS und JavaScript erstellt.
     `,
     buttonView: `Youtube-Project/index.html`,
     buttonCode: `https://github.com/RyanAwex/Portfolio/tree/main/Youtube-Project`
@@ -24,12 +24,10 @@ export const projects = [
   {
     image: `images/rps.jpg`,
     descriptionEn: `
-      This is a Rock Paper Scissors Game, developed using HTML, CSS, and JavaScript, this Game provides an interactive experience
-      with score tracking and an auto-play feature that runs eachb 1s for automated
-      gameplay, with also a Reset score button that resets the score to Zero.
+      This is a Rock Paper Scissors game developed using HTML, CSS, and JavaScript. The game offers an interactive user experience with real-time score tracking. It also includes an auto-play feature that runs every second to simulate automatic gameplay, and a reset button that resets the score to zero. The project demonstrates basic game logic, DOM manipulation, and user interaction in the browser.
     `,
     descriptionDE: `
-      Dies ist ein Schere, Stein, Papier-Spiel, das mit HTML, CSS und JavaScript entwickelt wurde. Dieses Spiel bietet ein interaktives Erlebnis mit einer Punktverfolgung und einer Auto-Play-Funktion, die alle 1 Sekunde für automatisiertes Gameplay läuft, sowie einer "Punktestand zurücksetzen"-Schaltfläche, die den Punktestand auf Null setzt.
+      Das ist ein Stein-Schere-Papier-Spiel, das mit HTML, CSS und JavaScript entwickelt wurde. Das Spiel bietet eine interaktive Nutzererfahrung mit einer Punkteanzeige in Echtzeit. Es gibt auch eine Auto-Play-Funktion, die jede Sekunde automatisch spielt, sowie eine Reset-Taste, die den Punktestand auf null zurücksetzt. Das Projekt zeigt einfache Spiel-Logik, DOM-Manipulation und Benutzerinteraktion im Browser.
     `,
     buttonView: `Rock-Paper-Scissors-Game/index.html`,
     buttonCode: `https://github.com/RyanAwex/Portfolio/tree/main/Rock-Paper-Scissors-Game`
