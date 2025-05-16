@@ -60,10 +60,10 @@ function toggleLanguage() {
   const enElements = document.querySelectorAll(".en");
   const deElements = document.querySelectorAll(".de");
   enElements.forEach(
-    (el) => (el.style.display = el.style.display === "none" ? "flex" : "none")
+    (el) => (el.style.display = el.style.display === "none" ? "grid" : "none")
   );
   deElements.forEach(
-    (el) => (el.style.display = el.style.display === "none" ? "flex" : "none")
+    (el) => (el.style.display = el.style.display === "none" ? "grid" : "none")
   );
   const newLang = this.innerText === "DE" ? "EN" : "DE";
   document
@@ -83,9 +83,9 @@ function applyStoredLanguage() {
     const deElements = document.querySelectorAll(".de");
     if (storedLanguage === "DE") {
       enElements.forEach((el) => (el.style.display = "none"));
-      deElements.forEach((el) => (el.style.display = "flex"));
+      deElements.forEach((el) => (el.style.display = "grid"));
     } else {
-      enElements.forEach((el) => (el.style.display = "flex"));
+      enElements.forEach((el) => (el.style.display = "grid"));
       deElements.forEach((el) => (el.style.display = "none"));
     }
     document
