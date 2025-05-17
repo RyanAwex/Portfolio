@@ -1,5 +1,16 @@
 export const projects = [
   {
+    image: `images/6-projects.png`,
+    descriptionEn: `
+      This is a collection of 6 mini web projects in one page: Age Calculator, Random Quotes Generator, Stopwatch, Palindrome Checker, Digital Clock, and Counter. Each project is built with simple HTML, CSS, and JavaScript, making them perfect for beginners to learn and practice basic web development skills. All projects are interactive and easy to use.
+    `,
+    descriptionDE: `
+      Dies ist eine Sammlung von 6 Mini-Webprojekten auf einer Seite: Altersrechner, Zufallszitate-Generator, Stoppuhr, Palindrom-Prüfer, Digitale Uhr und Zähler. Jedes Projekt wurde mit einfachem HTML, CSS und JavaScript erstellt und ist ideal für Anfänger, um grundlegende Webentwicklung zu lernen und zu üben. Alle Projekte sind interaktiv und leicht zu bedienen.
+    `,
+    buttonView: `6-Projects/index.html`,
+    buttonCode: `https://github.com/RyanAwex/Portfolio/tree/main/6-Projects`
+  },
+  {
     image: `images/youtube.png`,
     descriptionEn: `
       This is a simple YouTube project where I applied several layout improvements and made design changes to make it more visually appealing. Instead of writing all the content in static HTML, I used JavaScript to dynamically generate the data and display the content on the page. This method helps improve performance and makes the project easier to update in the future. The project was created using HTML, CSS, and JavaScript..
