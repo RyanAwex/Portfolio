@@ -18,11 +18,12 @@ body {
 .palindrome-checker-box,
 .digital-clock-box,
 .counter-box {
-  height: 50vh;
+  height: auto;
   border: 1px solid rgba(105, 105, 105, 0.455);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 40px;
 }
 .age-calculator-box h1,
 .random-quotes-box h1,
@@ -69,10 +70,12 @@ body {
 .random-quotes-box {
   position: relative;
 }
+
+.random-quotes-box h1 {
+  height: auto;
+}
 .random-quotes-box p {
   font-size: 1.2rem;
-  position: absolute;
-  top: 40%;
   width: 90%;
   text-align: center;
   line-height: 1.5;
