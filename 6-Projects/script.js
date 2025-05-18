@@ -12,23 +12,27 @@ document.querySelector(".age-calculator-box").innerHTML = ageCalulatorHTML;
 
 document.querySelector(".age-button").onclick = () => {
   const birthValue = document.querySelector(".age-input").value;
-
   const birth = new Date(birthValue);
   const today = new Date();
 
-  let age = today.getFullYear() - birth.getFullYear();
-
-  if (
-    today < new Date(today.getFullYear(), birth.getMonth(), birth.getDate())
-  ) {
+  if (!birthValue || birth > today) {
     document.querySelector(
       ".age-display"
     ).innerHTML = `Please enter a valid Birthday`;
-  } else {
-    document.querySelector(
-      ".age-display"
-    ).innerHTML = `You born in <b>${birth.getFullYear()}</b> <br> so your age is <b>${age}</b>`;
+    return;
   }
+
+  let age = today.getFullYear() - birth.getFullYear();
+  if (
+    today.getMonth() < birth.getMonth() ||
+    (today.getMonth() === birth.getMonth() && today.getDate() < birth.getDate())
+  ) {
+    age--;
+  }
+
+  document.querySelector(
+    ".age-display"
+  ).innerHTML = `You born in <b>${birth.getFullYear()}</b> <br> so your age is <b>${age}</b>`;
 };
 
 // Quotes Generator
