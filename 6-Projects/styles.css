@@ -9,6 +9,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .age-calculator-box,
@@ -22,7 +23,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 250px;
 }
 .age-calculator-box h1,
 .random-quotes-box h1,
@@ -178,7 +178,7 @@ body {
   font-size: 1rem;
   transition: 0.2s;
 }
-.counter-div button:hover, 
+.counter-div button:hover,
 .age-calculator button:hover,
 .stop-watch-box button:hover,
 .palindrome-button:hover {
@@ -189,4 +189,80 @@ body {
 .stop-watch-box button:active,
 .palindrome-button:active {
   transform: scale(0.95);
+}
+
+@media only screen and (max-width: 1200px) {
+  .age-calculator {
+    flex-direction: column;
+    height: auto;
+    row-gap: 10px;
+    column-gap: 0;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+  }
+  .age-display {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .age-calculator-box h1,
+  .random-quotes-box h1,
+  .stop-watch-box h1,
+  .palindrome-checker-box h1,
+  .digital-clock-box h1,
+  .counter-box h1 {
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .stop-watch-box p {
+    font-size: 2rem;
+  }
+  .stop-watch-box button {
+    text-align: center;
+    padding: 7px 15px;
+    font-size: 0.9rem;
+  }
+
+  .counter-div {
+    column-gap: 0;
+    row-gap: 10px;
+    flex-direction: column;
+  }
+  .counter-div button {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  .stop-watch-box p {
+    font-size: 3rem;
+  }
+  .stop-watch-box button {
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+
+  .counter-div {
+    column-gap: 10px;
+    row-gap: 0;
+    flex-direction: row;
+  }
+  .counter-div button {
+    padding: 8px 10px;
+    font-size: 1rem;
+  }
 }
