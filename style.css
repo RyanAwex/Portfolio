@@ -1,0 +1,42 @@
+/* Custom scrollbar for a more modern feel - Optional */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1f1f1f; /* Darker track */
+}
+::-webkit-scrollbar-thumb {
+  background: #4b5563; /* Gray thumb */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6; /* Accent color on hover */
+}
+
+.section-title {
+  opacity: 0; /* Initially hidden for animation */
+}
+.project-card {
+  opacity: 0;
+}
+.skill-item {
+  opacity: 0;
+}
+
+/* For modal */
+.modal {
+  transition: opacity 0.25s ease;
+}
+.modal-content {
+  transition: transform 0.25s ease;
+}
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: hidden; /* Prevent scrolling when modal is open */
+}
+.glassmorphism {
+  background: rgba(20, 20, 20, 0.6); /* Semi-transparent black */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

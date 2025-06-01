@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-P8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rayane Sefiani - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+            colors: {
+              "brand-black": "#121212",
+              "brand-white": "#F5F5F5",
+              "brand-accent": "#3B82F6", // A touch of accent color (blue)
+            },
+            animation: {
+              "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+              "slide-in-left": "slideInLeft 0.8s ease-out forwards",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              slideInLeft: {
+                "0%": { opacity: "0", transform: "translateX(-30px)" },
+                "100%": { opacity: "1", transform: "translateX(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="bg-brand-black text-brand-white font-inter antialiased">
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 glassmorphism"
+    >
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <a
+          href="#"
+          class="text-3xl font-bold tracking-tight hover:text-brand-accent transition-colors"
+          >RS.</a
+        >
+        <nav class="hidden md:flex">
+          <ul class="flex space-x-6 items-center">
+            <li>
+              <a
+                href="#hero"
+                class="hover:text-brand-accent transition-colors font-medium"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="hover:text-brand-accent transition-colors font-medium"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="hover:text-brand-accent transition-colors font-medium"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#skills"
+                class="hover:text-brand-accent transition-colors font-medium"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="bg-brand-accent hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-brand-white focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden">
+        <ul class="flex flex-col items-center space-y-4 py-4">
+          <li>
+            <a
+              href="#hero"
+              class="hover:text-brand-accent transition-colors font-medium mobile-menu-link"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="hover:text-brand-accent transition-colors font-medium mobile-menu-link"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="hover:text-brand-accent transition-colors font-medium mobile-menu-link"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="hover:text-brand-accent transition-colors font-medium mobile-menu-link"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="bg-brand-accent hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 mobile-menu-link"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <section
+      id="hero"
+      class="min-h-screen flex items-center justify-center bg-brand-black pt-20 md:pt-0"
+    >
+      <div class="container mx-auto px-6 text-center">
+        <h1
+          class="text-5xl md:text-7xl font-extrabold mb-6 animate-fade-in-up"
+          style="animation-delay: 0.2s"
+        >
+          Hi, I'm <span class="text-brand-accent">Rayane Sefiani</span>.
+        </h1>
+        <p
+          class="text-xl md:text-2xl text-gray-300 mb-10 animate-fade-in-up"
+          style="animation-delay: 0.4s"
+        >
+          Creative Front-End Developer with a passion for clean, responsive design.
+        </p>
+        <a
+          href="#projects"
+          class="bg-brand-accent hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 inline-block animate-fade-in-up"
+          style="animation-delay: 0.6s"
+        >
+          View My Work
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 md:py-32 bg-zinc-900">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title text-4xl font-bold text-center mb-16">
+          <span class="text-brand-accent">01.</span> About Me
+        </h2>
+        <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+          <div
+            class="md:w-1/3 animate-slide-in-left"
+            style="animation-delay: 0.2s"
+          >
+            <img
+              src="images/me.jpg"
+              alt="Rayane Sefiani"
+              class="rounded-full shadow-2xl mx-auto border-4 border-brand-accent w-64 h-64 md:w-80 md:h-80 object-cover"
+            />
+          </div>
+          <div
+            class="md:w-2/3 animate-fade-in-up"
+            style="animation-delay: 0.4s"
+          >
+            <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+              Hello! I'm Rayane Sefiani, a passionate and results-driven web developer from Morocco. With a solid foundation in front-end technologies like HTML, CSS, and JavaScript and a growing skillset in ReactJs specialize in building modern, responsive, and user-focused web applications.
+            </p>
+            <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+              My journey into web development began at the age of 16, driven by a deep curiosity for how technology works and a desire to express creativity through code. Over the years, I've built several projects from To-Do List projects to interactive Games—each sharpening my ability to turn ideas into functional, polished websites.
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed">
+              Outside of coding, I enjoy learning about cars, exploring hardware and software, and constantly diving into new tech that inspires me.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-20 md:py-32 bg-brand-black">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title text-4xl font-bold text-center mb-16">
+          <span class="text-brand-accent">02.</span> My Projects
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+
+          <div
+            class="project-card bg-zinc-900 p-6 rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+            data-project-id="project1"
+          >
+            <img
+              src="images/6-projects.png"
+              alt="Project Alpha"
+              class="rounded-lg mb-6 w-full h-48 object-cover"
+            />
+            <h3 class="text-2xl font-semibold mb-2 text-brand-white">
+              Multiple JavaScript Projects
+            </h3>
+            <p class="text-gray-400 mb-4 text-sm">
+              JavaScript Projects Showcasing Clean Design and Interactivity.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="bg-brand-accent text-xs text-white px-2 py-1 rounded-full"
+                >HTML</span
+              >
+              <span
+                class="bg-brand-accent text-xs text-white px-2 py-1 rounded-full"
+                >CSS</span
+              >
+              <span
+                class="bg-brand-accent text-xs text-white px-2 py-1 rounded-full"
+                >JavaScript</span
+              >
+            </div>
+            <button class="text-brand-accent font-semibold hover:underline">
+              View Details
+            </button>
+          </div>
+
+
+          <div
+            class="project-card bg-zinc-900 p-6 rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+            data-project-id="project2"
+          >
+            <img
+              src="images/youtube.png"
+              alt="Project Beta"
+              class="rounded-lg mb-6 w-full h-48 object-cover"
+            />
+            <h3 class="text-2xl font-semibold mb-2 text-brand-white">
+              Youtube project
+            </h3>
+            <p class="text-gray-400 mb-4 text-sm">
+              JavaScript-Powered YouTube Clone with Enhanced Design.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="bg-green-500 text-xs text-white px-2 py-1 rounded-full"
+                >HTML</span
+              >
+              <span
+                class="bg-green-500 text-xs text-white px-2 py-1 rounded-full"
+                >CSS</span
+              >
+              <span
+                class="bg-green-500 text-xs text-white px-2 py-1 rounded-full"
+                >JavaScript</span
+              >
+            </div>
+            <button class="text-green-500 font-semibold hover:underline">
+              View Details
+            </button>
+          </div>
+
+
+          <div
+            class="project-card bg-zinc-900 p-6 rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+            data-project-id="project3"
+          >
+            <img
+              src="images/todo-list.png"
+              alt="Project Gamma"
+              class="rounded-lg mb-6 w-full h-48 object-cover"
+            />
+            <h3 class="text-2xl font-semibold mb-2 text-brand-white">
+              To-Do List
+            </h3>
+            <p class="text-gray-400 mb-4 text-sm">
+              Advanced To-Do List with Local Storage Integration.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="bg-yellow-500 text-xs text-white px-2 py-1 rounded-full"
+                >HTML</span
+              >
+              <span
+                class="bg-yellow-500 text-xs text-white px-2 py-1 rounded-full"
+                >CSS</span
+              >
+              <span
+                class="bg-yellow-500 text-xs text-white px-2 py-1 rounded-full"
+                >JavaScript</span
+              >
+            </div>
+            <button class="text-yellow-500 font-semibold hover:underline">
+              View Details
+            </button>
+          </div>
+
+
+          <div
+            class="project-card bg-zinc-900 p-6 rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+            data-project-id="project4"
+          >
+            <img
+              src="images/rps.jpg"
+              alt="Project Delta"
+              class="rounded-lg mb-6 w-full h-48 object-cover"
+            />
+            <h3 class="text-2xl font-semibold mb-2 text-brand-white">
+              Rock-Paper-Scissors game
+            </h3>
+            <p class="text-gray-400 mb-4 text-sm">
+              Rock Paper Scissors Game with Auto-Play & Score Tracking.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-red-500 text-xs text-white px-2 py-1 rounded-full">HTML</span>
+              <span class="bg-red-500 text-xs text-white px-2 py-1 rounded-full">CSS</span>
+              <span class="bg-red-500 text-xs text-white px-2 py-1 rounded-full">JavaScript</span>
+            </div>
+            <button class="text-red-500 font-semibold hover:underline">
+              View Details
+            </button>
+          </div>
+
+
+          <div
+            class="project-card bg-zinc-900 p-6 rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+            data-project-id="project5"
+          >
+            <img
+              src="images/calculator.png"
+              alt="Project Epsilon"
+              class="rounded-lg mb-6 w-full h-48 object-cover"
+            />
+            <h3 class="text-2xl font-semibold mb-2 text-brand-white">
+              Calculator project
+            </h3>
+            <p class="text-gray-400 mb-4 text-sm">
+              Simple & Intuitive Calculator for Everyday Math with Clean UI.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-green-500 text-xs text-white px-2 py-1 rounded-full">HTML</span>
+              <span class="bg-green-500 text-xs text-white px-2 py-1 rounded-full">CSS</span>
+              <span class="bg-green-500 text-xs text-white px-2 py-1 rounded-full">JavaScript</span>
+            </div>
+            <button class="text-green-500 font-semibold hover:underline">
+              View Details
+            </button>
+          </div>
+
+
+          <div
+            class="project-card bg-zinc-900 p-6 rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+            data-project-id="project6"
+          >
+            <img
+              src="images/password.png"
+              alt="Project Zeta"
+              class="rounded-lg mb-6 w-full h-48 object-cover"
+            />
+            <h3 class="text-2xl font-semibold mb-2 text-brand-white">
+              Password Generator
+            </h3>
+            <p class="text-gray-400 mb-4 text-sm">
+              Smart Password Generator: Numbers, Letters & Symbols.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-indigo-500 text-xs text-white px-2 py-1 rounded-full">HTML</span>
+              <span class="bg-indigo-500 text-xs text-white px-2 py-1 rounded-full">CSS</span>
+              <span class="bg-indigo-500 text-xs text-white px-2 py-1 rounded-full">JavaScript</span>
+            </div>
+            <button class="text-indigo-500 font-semibold hover:underline">
+              View Details
+            </button>
+          </div>
+
+
+        </div>
+
+
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 md:py-32 bg-zinc-900">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title text-4xl font-bold text-center mb-16">
+          <span class="text-brand-accent">03.</span> My Skills
+        </h2>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 text-center"
+        >
+
+          <div
+            class="skill-item bg-brand-black p-6 rounded-xl shadow-lg hover:shadow-brand-accent/30 transition-shadow duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-code-xml mx-auto mb-3 text-brand-accent"
+            >
+              <path d="m18 16 4-4-4-4" />
+              <path d="m6 8-4 4 4 4" />
+              <path d="m14.5 4-5 16" />
+            </svg>
+            <p class="font-semibold text-lg">HTML5</p>
+          </div>
+
+          <div
+            class="skill-item bg-brand-black p-6 rounded-xl shadow-lg hover:shadow-brand-accent/30 transition-shadow duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-css3 mx-auto mb-3 text-brand-accent"
+            >
+              <path d="M3 3l1.5 17L12 21l7.5-1.5L21 3H3z" />
+              <path d="M8 7h8M8 12h6M9 17h4" />
+            </svg>
+
+            <p class="font-semibold text-lg">CSS3</p>
+          </div>
+
+          <div
+            class="skill-item bg-brand-black p-6 rounded-xl shadow-lg hover:shadow-brand-accent/30 transition-shadow duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-braces mx-auto mb-3 text-brand-accent"
+            >
+              <path
+                d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5a2 2 0 0 0 2 2h1"
+              />
+              <path
+                d="M16 21h1a2 2 0 0 0 2-2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+              />
+            </svg>
+            <p class="font-semibold text-lg">JavaScript</p>
+          </div>
+
+          <div
+            class="skill-item bg-brand-black p-6 rounded-xl shadow-lg hover:shadow-brand-accent/30 transition-shadow duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-atom mx-auto mb-3 text-brand-accent"
+            >
+              <circle cx="12" cy="12" r="1" />
+              <path
+                d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"
+              />
+              <path
+                d="M15.7 15.7c4.5-4.54 6.52-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.54 4.52-6.52 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"
+              />
+            </svg>
+            <p class="font-semibold text-lg">React</p>
+          </div>
+
+          <div
+            class="skill-item bg-brand-black p-6 rounded-xl shadow-lg hover:shadow-brand-accent/30 transition-shadow duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-tailwind mx-auto mb-3 text-brand-accent"
+            >
+              <path d="M7 5h6a4 4 0 0 1 0 8H7z" />
+              <path d="M7 13h7a4 4 0 0 1 0 8H7z" />
+              <line x1="7" y1="5" x2="7" y2="21" />
+            </svg>
+
+            <p class="font-semibold text-lg">Bootstrap</p>
+          </div>
+
+          <div
+            class="skill-item bg-brand-black p-6 rounded-xl shadow-lg hover:shadow-brand-accent/30 transition-shadow duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-figma mx-auto mb-3 text-brand-accent"
+            >
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" />
+              <path d="M8 12h8M12 8v8" />
+            </svg>
+
+            <p class="font-semibold text-lg">DayJs</p>
+          </div>  
+          
+          <div
+          class="skill-item bg-brand-black p-6 rounded-xl shadow-lg hover:shadow-brand-accent/30 transition-shadow duration-300"
+          >
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-server mx-auto mb-3 text-brand-accent"
+            >
+              <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+              <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+              <line x1="6" x2="6.01" y1="6" y2="6" />
+              <line x1="6" x2="6.01" y1="18" y2="18" />
+            </svg>
+            <p class="font-semibold text-lg">Node.js</p>
+          </div>
+
+          <div
+            class="skill-item bg-brand-black p-6 rounded-xl shadow-lg hover:shadow-brand-accent/30 transition-shadow duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-git-branch-plus mx-auto mb-3 text-brand-accent"
+            >
+              <path d="M6 3v12" />
+              <path d="M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              <path d="M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              <path d="M15 6a9 9 0 0 0-9 9" />
+              <path d="M18 15v6" />
+              <path d="M21 18h-6" />
+            </svg>
+            <p class="font-semibold text-lg">Git & GitHub</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-16" style="background-color: rgb(18 18 18 / var(--tw-bg-opacity, 1));">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold mb-8 text-brand-white">Get in Touch</h2>
+    <div class="flex flex-col items-center gap-6">
+      <!-- Phone Button -->
+      <a href="tel:+212778398140" class="relative flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 w-full max-w-xs">
+        <span class="absolute left-4 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm0 12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2zm12-12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zm0 12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+          </svg>
+        </span>
+        <span class="w-full text-center">+212 778 398 140</span>
+      </a>
+      <!-- Email Button -->
+      <a href="mailto:ryanawex@gmail.com" class="relative flex items-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 w-full max-w-xs">
+        <span class="absolute left-4 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 0l8 6 8-6" />
+          </svg>
+
+        </span>
+        <span class="w-full text-center">ryanawex@gmail.com</span>
+      </a>
+      <!-- WhatsApp Button -->
+      <a href="https://wa.me/212778398140" target="_blank" rel="noopener noreferrer" class="relative flex items-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 w-full max-w-xs">
+        <span class="absolute left-4 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.13 1.6 5.93L0 24l6.24-1.63A11.93 11.93 0 0012 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.67-.5-5.24-1.44l-.37-.22-3.7.97.99-3.6-.24-.38A9.93 9.93 0 012 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.6c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.41-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.36-.01-.56-.01-.19 0-.5.07-.76.34-.26.27-1 1.01-1 2.46 0 1.45 1.03 2.85 1.18 3.05.15.2 2.03 3.1 4.93 4.23.69.3 1.23.48 1.65.61.69.22 1.32.19 1.81.12.55-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/>
+          </svg>
+        </span>
+        <span class="w-full text-center">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+  
+    <footer class="py-12 bg-zinc-900 border-t border-zinc-800">
+      <div class="container mx-auto px-6 text-center text-gray-400">
+        <p class="mb-2">
+          &copy; <span id="current-year"></span> Rayane Sefiani. All rights reserved.
+        </p>
+        <p>
+          Designed & Built with HTML, JavaScript and
+          Tailwind CSS.
+        </p>
+        <div class="mt-4 flex justify-center space-x-6">
+          <a
+            href="https://github.com/RyanAwex"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-brand-accent transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-github"
+            >
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/rayane-sefiani"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-brand-accent transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-linkedin"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+              <rect width="4" height="12" x="2" y="9" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+
+          <a
+            href="https://www.instagram.com/ryan.awex/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-brand-accent transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-instagram"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+            </svg>
+
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="project-modal"
+      class="modal p-4 fixed inset-0 z-[60] flex items-center justify-center opacity-0 pointer-events-none"
+    >
+      <div
+        class="modal-overlay absolute inset-0 bg-black/70 backdrop-blur-sm"
+      ></div>
+      <div
+        id="modal-content-wrapper"
+        class="modal-content relative w-full max-w-3xl max-h-[90vh] bg-zinc-900 rounded-xl shadow-2xl p-6 md:p-8 transform scale-95"
+      >
+        <button
+          id="close-modal-button"
+          class="absolute top-4 right-4 text-gray-400 hover:text-brand-white transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div
+          id="modal-body"
+          class="overflow-y-auto max-h-[calc(90vh-100px)] pr-2"
+        ></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
