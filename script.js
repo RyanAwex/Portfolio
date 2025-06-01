@@ -8,7 +8,7 @@ const projectsData = {
     longDescription:
       "<p class='mb-4'>This project was a practical exercise in building interactive web applications without relying on frameworks or libraries. We focused heavily on JavaScript fundamentals, DOM manipulation, and clean UI/UX design to provide a smooth user experience.</p><p class='mb-4'>Challenges included maintaining modular code structure across multiple tools, handling accurate date/time calculations, and ensuring consistent design behavior across different components.</p><p>The final result is a versatile and beginner-friendly platform that demonstrates core web development principles through real-world mini apps, making it an excellent foundation for learning and teaching.</p>",
     technologies: ["HTML5", "CSS3", "JavaScript"],
-    liveLink: "6-projects/index.html",
+    liveLink: "6-Projects/index.html",
     repoLink: "https://github.com/RyanAwex/Portfolio/tree/main/6-Projects",
   },
   project2: {
