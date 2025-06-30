@@ -173,7 +173,7 @@ function successCallback(position) {
       dayBox.className = "days-box";
       dayBox.innerHTML = `
         <p>${dayName}</p>
-        <img src="images/${iconFile}" alt="weather-img" />
+        <img src="images/${iconFile}" />
         <h2>${maxTemp}° / ${minTemp}°</h2>
       `;
       container.appendChild(dayBox);
@@ -182,7 +182,6 @@ function successCallback(position) {
     const mainImgEl = document.querySelector(".main-box-img");
     if (mainImgEl) {
       mainImgEl.src = `images/${getIconByCode(weather.weathercode)}`;
-      mainImgEl.alt = weatherCodeText[weather.weathercode] || "Weather icon";
     }
   })();
 }
