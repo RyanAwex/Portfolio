@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-main-box">
+        <div class="main-box-left">
+          <h1 class="city"></h1>
+          <p class="degree"></p>
+          <p class="condition"></p>
+          <p class="date"></p>
+        </div>
+
+        <div class="main-box-right">
+          <img class="main-box-img" alt="weather-img" />
+        </div>
+      </div>
+
+      <div class="weather-main-info">
+        <div class="box">
+          <p>Feels like</p>
+          <h2 class="feels-like"></h2>
+        </div>
+
+        <div class="box">
+          <p>Humidity</p>
+          <h2 class="humidity"></h2>
+        </div>
+
+        <div class="box">
+          <p>UV index</p>
+          <h2 class="uv-index"></h2>
+        </div>
+
+        <div class="box">
+          <p>Wind</p>
+          <h2 class="wind-gusts"></h2>
+          <h1>Km/h</h1>
+        </div>
+      </div>
+
+      <div class="weather-next-days">
+        <p class="title-next-days">4-Day Forecast</p>
+
+        <div class="day-box-container">
+          <div class="days-box">
+            <p></p>
+            <img alt="weather-img" />
+            <h2></h2>
+          </div>
+
+          <div class="days-box">
+            <p></p>
+            <img alt="weather-img" />
+            <h2></h2>
+          </div>
+
+          <div class="days-box">
+            <p></p>
+            <img alt="weather-img" />
+            <h2></h2>
+          </div>
+
+          <div class="days-box">
+            <p></p>
+            <img alt="weather-img" />
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
