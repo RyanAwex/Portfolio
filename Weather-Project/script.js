@@ -3,8 +3,13 @@ import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 const liveDate = dayjs().format("hh:mm A dddd");
 document.querySelector(".date").innerHTML = liveDate;
 
-navigator.geolocation.getCurrentPosition(
-  async (position) => {
+function showManualLocationInput() {
+  alert("Please enable location services or enter your location manually.");
+  // You can expand this to show a form/input for manual city entry
+}
+
+function successCallback(position) {
+  (async () => {
     const { latitude, longitude } = position.coords;
 
     // Get city name
@@ -38,7 +43,7 @@ navigator.geolocation.getCurrentPosition(
       }
     });
 
-    // Helper: map codes to your 8 icons with day/night support
+    // Icon mapping function and weatherCodeText remain the same here...
     function getIconByCode(code) {
       code = String(code);
       const hour = new Date().getHours();
@@ -90,7 +95,6 @@ navigator.geolocation.getCurrentPosition(
       }
     }
 
-    // Text for weather codes (optional)
     const weatherCodeText = {
       0: "Clear",
       1: "Mainly clear",
@@ -122,7 +126,6 @@ navigator.geolocation.getCurrentPosition(
       99: "Thunderstorm + heavy hail",
     };
 
-    // UV index text
     function uvIndexLevel(uv) {
       if (uv < 3) return "Low";
       if (uv < 6) return "Moderate";
@@ -131,7 +134,7 @@ navigator.geolocation.getCurrentPosition(
       return "Extreme";
     }
 
-    // Update current weather elements
+    // Update elements
     const degreeEl = document.querySelector(".degree");
     const conditionEl = document.querySelector(".condition");
     const humidityEl = document.querySelector(".humidity");
@@ -153,10 +156,9 @@ navigator.geolocation.getCurrentPosition(
     if (windGustsEl)
       windGustsEl.innerHTML = `${weatherData.hourly.windgusts_10m[timeIndex]}`;
 
-    // Populate 4-day forecast
+    // Forecast
     const container = document.querySelector(".day-box-container");
     container.innerHTML = "";
-
     for (let i = 1; i <= 4; i++) {
       const dayName = new Date(weatherData.daily.time[i]).toLocaleDateString(
         "en-US",
@@ -165,7 +167,7 @@ navigator.geolocation.getCurrentPosition(
       const maxTemp = Math.round(weatherData.daily.temperature_2m_max[i]);
       const minTemp = Math.round(weatherData.daily.temperature_2m_min[i]);
       const code = weatherData.daily.weathercode[i];
-      const iconFile = getIconByCode(code); // forecast assumes day icons
+      const iconFile = getIconByCode(code);
 
       const dayBox = document.createElement("div");
       dayBox.className = "days-box";
@@ -182,9 +184,35 @@ navigator.geolocation.getCurrentPosition(
       mainImgEl.src = `images/${getIconByCode(weather.weathercode)}`;
       mainImgEl.alt = weatherCodeText[weather.weathercode] || "Weather icon";
     }
-  },
+  })();
+}
 
-  (error) => {
-    console.error("Location access denied or unavailable", error);
-  }
-);
+function errorCallback(error) {
+  console.error("Location access denied or unavailable", error);
+  showManualLocationInput();
+}
+
+navigator.permissions
+  .query({ name: "geolocation" })
+  .then((result) => {
+    if (result.state === "granted") {
+      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    } else if (result.state === "prompt") {
+      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    } else if (result.state === "denied") {
+      showManualLocationInput();
+    }
+
+    result.onchange = () => {
+      if (result.state === "granted") {
+        navigator.geolocation.getCurrentPosition(
+          successCallback,
+          errorCallback
+        );
+      }
+    };
+  })
+  .catch(() => {
+    // If permissions API not supported, fallback to normal getCurrentPosition
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  });
