@@ -1,4 +1,9 @@
-import { sql } from "../backend/config/db.js";
+import { neon } from "@neondatabase/serverless";
+
+// TODO: Replace with your actual Neon DB connection string
+const sql = neon(
+  "postgresql://USERNAME:PASSWORD@HOST/DATABASE?sslmode=require"
+);
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
