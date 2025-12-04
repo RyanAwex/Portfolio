@@ -9,7 +9,7 @@ export default function Projects() {
 
   useEffect(() => {
     const getProjects = async () => {
-      const response = await axios.get(`${API}/api/projects`);
+      const response = await axios.get(`${API}/projects`);
       setProjects(response.data);
     };
     getProjects();

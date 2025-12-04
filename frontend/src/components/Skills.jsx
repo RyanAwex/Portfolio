@@ -9,7 +9,7 @@ export default function Skills() {
 
   useEffect(() => {
     const getSkills = async () => {
-      const response = await axios.get(`${API}/api/skills`);
+      const response = await axios.get(`${API}/skills`);
       setSkills(response.data);
     };
     getSkills();
