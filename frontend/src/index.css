@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom slider for theme toggle */
+.toggle-bg {
+  transition: background-color 0.25s;
+}
+.toggle-dot {
+  transition: transform 0.25s;
+}
+
+/* Simple focus outline that matches theme */
+:root {
+  --focus: 2px solid rgba(59, 130, 246, 0.5);
+}
+:where(.dark) :focus {
+  outline: var(--focus);
+  outline-offset: 2px;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: auto;
+  @apply bg-white text-gray-800 dark:bg-[#111111] dark:text-gray-200;
+}
+
+/* Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+  display: none;
+}
