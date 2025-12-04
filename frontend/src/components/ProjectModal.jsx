@@ -60,16 +60,18 @@ export default function ProjectModal({ project, onClose }) {
             <p>{project.description}</p>
 
             {/* Tech Stack */}
-            {project.tech?.length > 0 && (
+            {Array.isArray(project.tech) && project.tech.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-2">
-                {project.tech.map((t, i) => (
-                  <span
-                    key={i}
-                    className="bg-primary text-xs text-white px-2 py-1 rounded-full"
-                  >
-                    {t}
-                  </span>
-                ))}
+                {(Array.isArray(project.tech) ? project.tech : []).map(
+                  (t, i) => (
+                    <span
+                      key={i}
+                      className="bg-primary text-xs text-white px-2 py-1 rounded-full"
+                    >
+                      {t}
+                    </span>
+                  )
+                )}
               </div>
             )}
 

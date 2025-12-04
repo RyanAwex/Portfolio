@@ -5,7 +5,7 @@ import { API } from "../api.js";
 
 export default function Projects() {
   const [openProject, setOpenProject] = useState(null);
-  const [projects, setProjects] = useState(null);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     const getProjects = async () => {
