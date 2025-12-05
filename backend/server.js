@@ -3,12 +3,10 @@ import cors from "cors";
 import { sql } from "./config/db.js";
 import projectsRoute from "./routes/projects.js";
 import skillsRoute from "./routes/skills.js";
-import path from "path";
 import "dotenv/config";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
@@ -40,14 +38,6 @@ async function initDB() {
     console.log("Error initDB", error);
   }
 }
-
-const distPath = path.join(__dirname, "/frontend/dist");
-app.use(express.static(distPath));
-
-// Serve index.html for non-API routes
-app.get(/^((?!\/api\/).)*$/, (req, res) => {
-  res.sendFile(path.join(distPath, "index.html"));
-});
 
 initDB().then(() => {
   app.listen(PORT, () => console.log("Server running on port", PORT));
