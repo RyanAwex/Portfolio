@@ -14,7 +14,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://frontend-portfolio-six-weld.vercel.app",
-      "https://rayanesefiani.com",
+      "https://www.rayanesefiani.com",
     ],
     credentials: true,
   })
