@@ -10,6 +10,9 @@
   transition: transform 0.25s;
 }
 
+.indie {
+  font-family: "Indie Flower", cursive;
+}
 /* Simple focus outline that matches theme */
 :root {
   --focus: 2px solid rgba(59, 130, 246, 0.5);
