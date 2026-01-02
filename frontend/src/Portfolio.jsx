@@ -434,7 +434,7 @@ const Portfolio = () => {
             let's chat.
           </p>
           <a
-            href="mailto:contact@example.com"
+            href="mailto:ryanawex@gmail.com"
             className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-bold rounded-lg transition-all indie"
           >
             <Mail size={20} /> Message me!
