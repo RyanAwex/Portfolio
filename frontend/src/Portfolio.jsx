@@ -13,6 +13,7 @@ import {
   Loader,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import axios from "axios";
 import { API } from "./api";
 
@@ -37,6 +38,7 @@ const Portfolio = () => {
   const toggleTheme = () => setDarkMode(!darkMode);
 
   const navLinks = [
+    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
@@ -85,13 +87,14 @@ const Portfolio = () => {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
-                <a
+                <HashLink
+                  smooth
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className="hover:text-indigo-500 font-medium transition-colors focus:outline-none "
                 >
                   {link.name}
-                </a>
+                </HashLink>
               ))}
               <button
                 onClick={toggleTheme}
@@ -147,32 +150,35 @@ const Portfolio = () => {
 
               {/* Mobile links */}
               <ul className="flex flex-col items-start w-full pt-20 bg-white dark:bg-slate-900">
-                {navLinks.map((link) => (
-                  <li key={link.href} className="w-full">
-                    <Link
-                      // smooth
-                      to={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block w-full py-4 px-8 font-semibold text-lg
+                {navLinks.map(
+                  (link) =>
+                    link.href !== "#contact" && (
+                      <li key={link.href} className="w-full">
+                        <HashLink
+                          smooth
+                          to={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block w-full py-4 px-8 font-semibold text-lg
                               hover:bg-gray-100 dark:hover:bg-gray-800
                               transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
+                        >
+                          {link.name}
+                        </HashLink>
+                      </li>
+                    )
+                )}
 
                 <li className="w-full px-8 py-4">
-                  <Link
-                    // smooth
-                    to="#contact"
+                  <HashLink
+                    smooth
+                    to="/#contact"
                     onClick={() => setMobileMenuOpen(false)}
                     className="block w-full text-center bg-blue-600
                             dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600
                             text-white font-semibold py-3 rounded-lg transition"
                   >
                     Contact
-                  </Link>
+                  </HashLink>
                 </li>
               </ul>
             </div>
@@ -181,7 +187,10 @@ const Portfolio = () => {
       </nav>
 
       {/* --- HERO SECTION --- */}
-      <section className="pt-32 pb-20 px-4 flex items-center justify-center min-h-screen">
+      <section
+        className="pt-32 pb-20 px-4 flex items-center justify-center min-h-screen"
+        id="home"
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-indigo-500 font-bold tracking-wide uppercase mb-4 indie">
             Full Stack Developer
