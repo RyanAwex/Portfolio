@@ -1,7 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import "tailwindcss";
 /* Custom slider for theme toggle */
 .toggle-bg {
   transition: background-color 0.25s;
@@ -10,16 +7,24 @@
   transition: transform 0.25s;
 }
 
-.indie {
-  font-family: "Indie Flower", cursive;
+.sora {
+  font-family: "Sora", sans-serif;
 }
-/* Simple focus outline that matches theme */
+.inter {
+  font-family: "Inter", sans-serif;
+}
+
 :root {
   --focus: 2px solid rgba(59, 130, 246, 0.5);
 }
 :where(.dark) :focus {
   outline: var(--focus);
   outline-offset: 2px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 html {
@@ -29,7 +34,7 @@ html {
 
 body {
   overflow: auto;
-  @apply bg-white text-gray-800 dark:bg-[#111111] dark:text-gray-200;
+  @apply bg-white dark:bg-[#111111];
 }
 
 /* Chrome, Edge, Safari */
