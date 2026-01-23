@@ -1,0 +1,43 @@
+@import "tailwindcss";
+/* Custom slider for theme toggle */
+.toggle-bg {
+  transition: background-color 0.25s;
+}
+.toggle-dot {
+  transition: transform 0.25s;
+}
+
+.sora {
+  font-family: "Sora", sans-serif;
+}
+.inter {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --focus: 2px solid rgba(59, 130, 246, 0.5);
+}
+:where(.dark) :focus {
+  outline: var(--focus);
+  outline-offset: 2px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: auto;
+  @apply bg-white dark:bg-[#111111];
+}
+
+/* Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+  display: none;
+}
