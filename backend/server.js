@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", process.env.FRONTEND_URL, "https://ryanawex.site"],
+    origin: ["http://localhost:5173", process.env.FRONTEND_URL, "https://ryanawex.site", "https://www.ryanawex.site"],
     credentials: true,
   }),
 );
