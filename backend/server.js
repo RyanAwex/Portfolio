@@ -4,10 +4,7 @@ import cors from "cors";
 import { sql } from "./config/db.js";
 import projectsRoute from "./routes/projects.js";
 import skillsRoute from "./routes/skills.js";
-import path from "path";
-import { fileURLToPath } from "url";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,17 +19,6 @@ app.use(
 
 app.use("/api/projects", projectsRoute);
 app.use("/api/skills", skillsRoute);
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "..", "frontend", "dist")));
-
-  // SPA fallback: serve index.html for any non-API request
-  app.use((req, res) => {
-    res.sendFile(
-      path.resolve(__dirname, "..", "frontend", "dist", "index.html"),
-    );
-  });
-}
 
 async function initDB() {
   try {

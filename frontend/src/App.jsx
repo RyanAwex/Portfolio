@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
 import axios from "axios";
-import { API } from "./api";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -30,6 +29,9 @@ const App = () => {
   const [projects, setProjects] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
+
+  const API_URL = import.meta.env.VITE_API_URL;
+  const API = import.meta.env.VITE_MODE === "development" ? "http://localhost:5000/api" : `${API_URL}/api`;
 
   // Toggle Dark Mode Class on HTML element
   useEffect(() => {
@@ -65,6 +67,7 @@ const App = () => {
   useEffect(() => {
     getProjects();
     getSkills();
+    // eslint-disable-next-line
   }, []);
 
   return (
