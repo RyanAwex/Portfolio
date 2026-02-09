@@ -24,6 +24,7 @@ import Contact from "./components/Contact";
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [headerSmall, setHeaderSmall] = useState(false);
 
   const [skills, setSkills] = useState([]);
   const [projects, setProjects] = useState([]);
@@ -31,7 +32,10 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const API_URL = import.meta.env.VITE_API_URL;
-  const API = import.meta.env.VITE_MODE === "development" ? "http://localhost:5000/api" : `${API_URL}/api`;
+  const API =
+    import.meta.env.VITE_MODE === "development"
+      ? "http://localhost:5000/api"
+      : `${API_URL}/api`;
 
   // Toggle Dark Mode Class on HTML element
   useEffect(() => {
@@ -70,6 +74,20 @@ const App = () => {
     // eslint-disable-next-line
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setHeaderSmall(true);
+      } else {
+        setHeaderSmall(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div
       className={`min-h-screen ${
@@ -84,11 +102,13 @@ const App = () => {
           darkMode
             ? "bg-slate-900/90 border-b border-slate-800"
             : "bg-white/90 border-b border-slate-200"
-        }`}
+        } ${headerSmall ? "h-12" : "h-16"}`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="shrink-0 font-bold text-2xl tracking-tighter text-indigo-500">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full">
+          <div className="flex items-center justify-between h-full">
+            <div
+              className={`shrink-0 font-bold text-2xl tracking-tighter text-indigo-500 transition-all duration-300 ${headerSmall ? "text-lg" : ""}`}
+            >
               RS.
             </div>
 
@@ -178,7 +198,7 @@ const App = () => {
                           {link.name}
                         </HashLink>
                       </li>
-                    )
+                    ),
                 )}
 
                 <li className="w-full px-8 py-4">

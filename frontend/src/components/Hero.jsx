@@ -1,14 +1,16 @@
 import { HashLink } from "react-router-hash-link";
 import React from "react";
 import { ChevronDown } from "lucide-react";
+import ParticleCanvas from "./ParticleCanvas";
 
 function Hero({ darkMode }) {
   return (
     <section
       id="home"
-      className={`relative pt-28 pb-12 sm:h-screen lg:max-h-256 flex items-center justify-center overflow-hidden`}
+      className={`relative pt-28 pb-12 h-screen lg:max-h-256 flex items-center justify-center overflow-hidden`}
     >
-      <div className="w-full max-w-4xl mx-auto text-center">
+      <ParticleCanvas />
+      <div className="w-full max-w-4xl mx-auto text-center z-40">
         <div className="mb-4 md:mb-6">
           <span
             className={`inline-block px-4 py-2 font-semibold text-sm uppercase tracking-wider rounded-full border ${
@@ -21,7 +23,7 @@ function Hero({ darkMode }) {
           </span>
         </div>
         <h1
-          className={`text-5xl xs:text-6xl md:text-7xl  font-extrabold mb-8 px-2 tracking-tight leading-tight wrap-break-word ${
+          className={`text-5xl xs:text-6xl md:text-7xl z-40 font-extrabold mb-8 px-2 tracking-tight leading-tight wrap-break-word ${
             darkMode ? "text-white" : "text-slate-900"
           }`}
         >

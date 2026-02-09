@@ -20,80 +20,92 @@ function Projects({ darkMode, projects, isLoading }) {
             A showcase of my recent work and creative solutions
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-8">
           {!isLoading ? (
             projects.map((item) => (
               <div
                 key={item.id}
-                className={`group rounded-2xl overflow-hidden border backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col ${
+                className={`group relative overflow-hidden rounded-2xl border transition-all duration-300 hover:shadow-2xl flex flex-col md:flex-row hover:scale-102 ${
                   darkMode
-                    ? "bg-slate-900/80 border-slate-700 shadow-xl"
-                    : "bg-white/80 border-slate-200 shadow-lg"
-                }`}
+                    ? "bg-slate-900/40 border-slate-700/50 hover:bg-slate-800/60"
+                    : "bg-white/40 border-slate-200/60 hover:bg-white/60"
+                } backdrop-blur-md`}
               >
-                <div className="relative h-56 bg-linear-to-br from-slate-700 to-slate-800 group-hover:from-indigo-900 group-hover:to-purple-900 transition-all duration-500 flex items-center justify-center overflow-hidden">
+                {/* Image Section - Takes full width on mobile, half on desktop */}
+                <div className="relative w-full md:w-1/2 aspect-[21/9] md:aspect-auto overflow-hidden group">
+                  <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-300 z-10" />
                   {item.image ? (
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300 ease-out"
                     />
                   ) : (
-                    <div className="text-slate-400 text-center">
-                      <Code size={48} className="mx-auto mb-2 opacity-50" />
-                      <span className="text-sm">Project Screenshot</span>
+                    <div className="w-full h-full flex items-center justify-center bg-slate-800">
+                      <Code size={48} className="text-slate-600" />
                     </div>
                   )}
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 </div>
-                <div className="p-8 flex flex-col grow">
-                  <div className="flex flex-col grow">
-                    <h3 className="text-2xl font-bold mb-3 group-hover:text-indigo-500 transition-colors">
+
+                {/* Content Section - Takes full width on mobile, half on desktop */}
+                <div className="p-6 md:p-10 flex flex-col justify-center w-full md:w-1/2 relative z-20">
+                  <div className="mb-4">
+                    <h3
+                      className={`text-2xl md:text-3xl font-bold mb-3 ${
+                        darkMode ? "text-white" : "text-slate-800"
+                      } group-hover:text-indigo-500 transition-colors duration-300`}
+                    >
                       {item.title}
                     </h3>
+                    <div className="w-12 h-1 bg-indigo-500 rounded-full mb-6 transform origin-left group-hover:scale-x-150 transition-transform duration-300" />
                     <p
-                      className={`mb-6 text-base leading-relaxed ${
+                      className={`text-base md:text-lg leading-relaxed mb-6 ${
                         darkMode ? "text-slate-400" : "text-slate-600"
                       }`}
                     >
                       {item.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {item.tech?.map((t, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 text-sm rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
                   </div>
-                  <div className="flex gap-6">
+
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {item.tech?.map((t, idx) => (
+                      <span
+                        key={idx}
+                        className={`px-3 py-1 text-xs font-medium rounded-full border ${
+                          darkMode
+                            ? "bg-slate-800/50 text-indigo-300 border-slate-700"
+                            : "bg-indigo-50 text-indigo-700 border-indigo-100"
+                        }`}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-6 pt-4 border-t border-slate-200/10 dark:border-slate-700/50">
                     <a
                       href={item.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-semibold hover:text-indigo-500 transition-colors group/link"
+                      className={`flex items-center gap-2 text-sm font-semibold transition-all duration-300 ${
+                        darkMode
+                          ? "text-slate-300 hover:text-white"
+                          : "text-slate-600 hover:text-indigo-600"
+                      }`}
                     >
-                      <Github size={18} />
-                      Code
-                      <ExternalLink
-                        size={14}
-                        className="opacity-0 group-hover/link:opacity-100 transition-opacity"
-                      />
+                      <Github size={20} />
+                      <span>Source Code</span>
                     </a>
                     <a
                       href={item.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-semibold hover:text-indigo-500 transition-colors group/link"
+                      className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-semibold shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all duration-300 transform hover:-translate-y-0.5"
                     >
                       <ExternalLink size={18} />
-                      Live Demo
-                      <ExternalLink
-                        size={14}
-                        className="opacity-0 group-hover/link:opacity-100 transition-opacity"
-                      />
+                      <span>Live Project</span>
                     </a>
                   </div>
                 </div>

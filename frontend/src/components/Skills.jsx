@@ -17,12 +17,12 @@ function Skills({ darkMode, skills, isLoading }) {
             Technologies and tools I use to bring ideas to life
           </p>
         </div>
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="grid grid-cols-2 xs:grid-cols-3 sm:flex sm:flex-wrap justify-center gap-4 sm:gap-6">
           {!isLoading ? (
             skills.map((skill) => (
               <div
                 key={skill.name}
-                className={`group p-6 rounded-2xl flex items-center gap-4 border backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+                className={`group p-4 sm:p-6 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 sm:gap-4 border backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
                   darkMode
                     ? "bg-slate-800/50 border-slate-700 hover:border-indigo-500/50 hover:bg-slate-800/80"
                     : "bg-white/50 border-slate-200 hover:border-indigo-500/50 hover:bg-white/80"
